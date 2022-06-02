@@ -36,13 +36,35 @@ function NoteContainer() {
       })
   }
 
+  function handleNewNote() {
+    const newNote = {
+      userId: 1,
+      title: 'Note Title',
+      body: 'Note body'
+    }
+    const config = {
+      method: 'POST',
+      headers: {
+        "Content-type": "application/json"
+      },
+      body: JSON.stringify(newNote)
+    }
+    fetch('http://localhost:3000/notes', config)
+      .then(r => r.json())
+      .then(note => {
+        updateNoteList([...allNotes, note])
+        addViewedNote(note)
+        displayEdit(true)
+      })
+  }
+
   const filteredNotes = allNotes.filter(note => note.title.toUpperCase().includes(searched.toUpperCase()))
 
   return (
     <>
       <Search onSearch={searchBy} value={searched} />
       <div className="container">
-        <Sidebar notes={filteredNotes} onClickNote={handleViewedNote} />
+        <Sidebar notes={filteredNotes} onClickNote={handleViewedNote} onAddNote={handleNewNote} />
         <Content note={viewedNote} editForm={editForm} displayEdit={displayEdit} onSaveEdit={handleSaveEdit} />
       </div>
     </>

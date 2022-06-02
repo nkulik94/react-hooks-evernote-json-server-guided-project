@@ -2,17 +2,11 @@ import React, { useState } from 'react';
 import { Link } from "react-router-dom"
 import Error from './Error';
 
-function LoginForm( { users, onLogin } ) {
+function LoginForm( { users, onLogin, handleError, displayError } ) {
     const [loginInfo, updateLogin] = useState({
         username: '',
         password: ''
     })
-    const [displayError, changeErrorDisplay] = useState(false)
-
-    function handleError() {
-        changeErrorDisplay(true)
-        setTimeout(() => changeErrorDisplay(false), 3000)
-    }
 
     function handleChange(e) {
         updateLogin({...loginInfo, [e.target.name]: e.target.value})
@@ -31,7 +25,7 @@ function LoginForm( { users, onLogin } ) {
             <input type="password" name="password" placeholder='enter password' value={loginInfo.password} onChange={handleChange} />
             <input type='submit' value="Log in" />
         </form>
-        {displayError ? <Error /> : null}
+        {displayError ? <Error error={'login-error'} /> : null}
         <p>
             New user? <Link to="/create-account">Create a new account</Link>
         </p>

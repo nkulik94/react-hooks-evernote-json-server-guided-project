@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-//import { useParams, useRouteMatch } from "react-router-dom";
 import Search from "./Search";
 import Sidebar from "./Sidebar";
 import Content from "./Content";
@@ -39,7 +38,7 @@ function NoteContainer( { id } ) {
 
   function handleNewNote() {
     const newNote = {
-      userId: 1,
+      userId: id,
       title: 'Note Title',
       body: 'Note body'
     }

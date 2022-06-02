@@ -5,6 +5,12 @@
       "name": "Naftali Kulik",
       "username": "nkulik",
       "password": "nkulik"
+    },
+    {
+      "name": "Naftali Kulik",
+      "username": "nkulik1994",
+      "password": "nkulik",
+      "id": 2
     }
   ],
   "notes": [
@@ -73,6 +79,12 @@
       "title": "I made a new note",
       "body": "Here's what it says",
       "id": 11
+    },
+    {
+      "userId": 2,
+      "title": "My note, not yours",
+      "body": "This is mine only",
+      "id": 12
     }
   ]
 }

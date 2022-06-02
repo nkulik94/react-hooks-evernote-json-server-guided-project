@@ -5,6 +5,7 @@ import Content from "./Content";
 
 function NoteContainer() {
   const [allNotes, updateNoteList] = useState([])
+  const [searched, searchBy] = useState('')
   const [viewedNote, addViewedNote] = useState(null)
 
   useEffect(() => {
@@ -12,11 +13,14 @@ function NoteContainer() {
       .then(r => r.json())
       .then(notes => updateNoteList(notes))
   }, [])
+
+  const filteredNotes = allNotes.filter(note => note.title.toUpperCase().includes(searched.toUpperCase()))
+
   return (
     <>
-      <Search />
+      <Search onSearch={searchBy} value={searched} />
       <div className="container">
-        <Sidebar notes={allNotes} onClickNote={addViewedNote} />
+        <Sidebar notes={filteredNotes} onClickNote={addViewedNote} />
         <Content note={viewedNote} />
       </div>
     </>

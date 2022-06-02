@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 
-function NoteEditor() {
+function NoteEditor( { note, displayEdit, onSaveEdit } ) {
+  const [editedNote, editNote] = useState(note)
+
+  function handleChange(e) {
+    editNote({...editedNote, [e.target.name]: e.target.value})
+  }
+
   return (
-    <form className="note-editor">
-      <input type="text" name="title" />
-      <textarea name="body" />
+    <form className="note-editor" onSubmit={e => {
+        e.preventDefault()
+        onSaveEdit(editedNote)
+      }} >
+      <input type="text" name="title" value={editedNote.title} onChange={handleChange} />
+      <textarea name="body" value={editedNote.body} onChange={handleChange} />
       <div className="button-row">
         <input className="button" type="submit" value="Save" />
-        <button type="button">Cancel</button>
+        <button type="button" onClick={() => displayEdit(false)}>Cancel</button>
       </div>
     </form>
   );

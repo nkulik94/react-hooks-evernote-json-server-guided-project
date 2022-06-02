@@ -2,7 +2,9 @@
   "users": [
     {
       "id": 1,
-      "name": "nkulik"
+      "name": "Naftali Kulik",
+      "username": "nkulik",
+      "password": "nkulik"
     }
   ],
   "notes": [
@@ -10,7 +12,7 @@
       "id": 1,
       "userId": 1,
       "title": "Repellendus excepturi.",
-      "body": "Tempora eum est repellendus nisi consequatur perspiciatis sed. Fugiat neque iste suscipit pariatur quis qui hic exercitationem. Maiores omnis rem voluptate. Nisi aut quidem quibusdam molestias voluptatum. Illo officiis cum aut dolore placeat aliquid aut mollitia facilis.\n \rLaborum fuga dolores. Sunt fuga cupiditate magni eum optio animi excepturi laudantium ab. Non eligendi hic sit placeat et.\n \rUt aut amet porro in mollitia quisquam pariatur consequuntur est. Ad ad quam. Nihil dolorem modi voluptate consequatur. Iusto id deserunt et accusantium."
+      "body": "hi Tempora eum est repellendus nisi consequatur perspiciatis sed. Fugiat neque iste suscipit pariatur quis qui hic exercitationem. Maiores omnis rem voluptate. Nisi aut quidem quibusdam molestias voluptatum. Illo officiis cum aut dolore placeat aliquid aut mollitia facilis.\n \nLaborum fuga dolores. Sunt fuga cupiditate magni eum optio animi excepturi laudantium ab. Non eligendi hic sit placeat et.\n \nUt aut amet porro in mollitia quisquam pariatur consequuntur est. Ad ad quam. Nihil dolorem modi voluptate consequatur. Iusto id deserunt et accusantium."
     },
     {
       "id": 2,

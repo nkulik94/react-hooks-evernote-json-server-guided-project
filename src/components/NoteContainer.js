@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
+//import { useParams, useRouteMatch } from "react-router-dom";
 import Search from "./Search";
 import Sidebar from "./Sidebar";
 import Content from "./Content";
 
-function NoteContainer() {
+function NoteContainer( { id } ) {
   const [allNotes, updateNoteList] = useState([])
   const [searched, searchBy] = useState('')
   const [viewedNote, addViewedNote] = useState(null)
@@ -58,7 +59,9 @@ function NoteContainer() {
       })
   }
 
-  const filteredNotes = allNotes.filter(note => note.title.toUpperCase().includes(searched.toUpperCase()))
+  const renderedNotes = allNotes.filter(note => note.userId === id)
+
+  const filteredNotes = renderedNotes.filter(note => note.title.toUpperCase().includes(searched.toUpperCase()))
 
   return (
     <>

@@ -1,10 +1,10 @@
 import React from "react";
 
-function NoteItem() {
+function NoteItem( { note, onClickNote } ) {
   return (
-    <li>
-      <h2>Title</h2>
-      <p>Caption...</p>
+    <li onClick={() => onClickNote(note)}>
+      <h2>{note.title}</h2>
+      <p>{note.body.substring(0, 50)}{note.body.substring(50) !== '' ? '...' : null}</p>
     </li>
   );
 }
